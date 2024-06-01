@@ -32,5 +32,5 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID}}
           projectName: personal-website
           directory: build
-          environment: production
+          branch: master
           wranglerVersion: '3'
