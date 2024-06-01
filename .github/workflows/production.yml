@@ -1,4 +1,10 @@
-on: [push]
+# Pipeline which Deploys to Cloudflare Production server (www.devendattani.com)
+
+# Pipeline runs when tagged commit (e.g. v1.1) occurs.
+on:
+  push:
+    tags:
+      - "v*"
 
 jobs:
   publish:
@@ -6,8 +12,10 @@ jobs:
     permissions:
       contents: read
       deployments: write
-    name: Publish to Cloudflare Pages
+
+    name: Deploy to Cloudflare Production
     steps:
+
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -17,7 +25,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Publish to Cloudflare Pages
+      - name: Publish to Production Page
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
