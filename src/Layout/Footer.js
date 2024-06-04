@@ -1,20 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../CSS/Layout.css";
 import { Link } from "react-router-dom";
-import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import EmailIcon from '@mui/icons-material/Email';
 
 function Footer() {
+  const [gitHub, setGitHub] = useState("Browse My Github Profile");
+  const [email, setEmail] = useState("Send Me An Email");
+  const [linkedIn, setLinkedIn] = useState("View My LinkedIn® Profile");
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 482) {
+        setGitHub("Github");
+        setEmail("Email");
+        setLinkedIn("LinkedIn");
+      } else {
+        setGitHub("Browse My Github Profile");
+        setEmail("Send me an Email");
+        setLinkedIn("Visit My LinkedIn® Profile");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  
   return (
     <div className="Footer">
-      <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}>
-        <BottomNavigation showLabels>
+        <BottomNavigation className="FooterBar" showLabels>
 
           <BottomNavigationAction
-            label="View my Github Profile"
+            label={gitHub}
             icon={
               <img
               src="GitHub.svg"
@@ -27,14 +48,14 @@ function Footer() {
           />
 
           <BottomNavigationAction
-            label="Send me an Email"
+            label={email}
             icon={<EmailIcon />}
             component={Link}
             to="mailto:contact@devendattani.com"
           />
 
           <BottomNavigationAction
-            label="View my LinkedIn&reg; Profile"
+            label={linkedIn}
             icon={
               <img
                 src="LinkedIn.png"
@@ -46,7 +67,6 @@ function Footer() {
             to="https://www.linkedin.com/in/devendattani/"
           />
         </BottomNavigation>
-      </Box>
     </div>
   );
 }
