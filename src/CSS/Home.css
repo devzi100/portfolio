@@ -1,11 +1,10 @@
-.Home {
-  text-align: center;
-  background-color: #282c34;
-  min-height: 85vh;
+.Home{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
+}
+
+.Home-Paper{
+  min-height: 100%;
+  overflow-y: auto;
 }
