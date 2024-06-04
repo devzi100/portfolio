@@ -1,4 +1,4 @@
-# Pipeline which Deploys to Cloudflare Development server (www.devendattani.com)
+# Pipeline which Deploys to Cloudflare Preview server
 
 # Pipeline runs on any pushes
 on:
@@ -11,7 +11,7 @@ jobs:
       contents: read
       deployments: write
 
-    name: Deploy to Cloudflare Development
+    name: Deploy to Cloudflare Preview
     steps:
 
       - name: Checkout
@@ -23,11 +23,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Publish to Development Page
+      - name: Publish to Preview Page
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID}}
           projectName: portfolio
+          branch: development
           directory: build
           wranglerVersion: '3'
