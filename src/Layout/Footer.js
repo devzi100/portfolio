@@ -37,7 +37,7 @@ function Footer() {
             label={gitHub}
             icon={
               <img
-              src="assets/GitHub.svg"
+              src="assets/github.svg"
               alt="Github Invertocat Logo"
               style={{ width: "auto", height: 24 }}
             />

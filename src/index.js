@@ -3,6 +3,9 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useMediaQuery, createTheme, ThemeProvider } from "@mui/material";
 import Home from "./Pages/Home";
+import Experience from "./Pages/Experience";
+import Projects from "./Pages/Projects";
+import Contact from "./Pages/Contact";
 import "./CSS/index.css";
 
 export const themeToggle = React.createContext({ SetColourMode: () => {} });
@@ -15,6 +18,18 @@ function Routes() {
     {
       path: "/",
       element: <Home />,
+    },
+    {
+      path: "/Experience",
+      element: <Experience />,
+    },
+    {
+      path: "/Projects",
+      element: <Projects />,
+    },
+    {
+      path: "/Contact",
+      element: <Contact />,
     },
   ]);
 
