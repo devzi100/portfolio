@@ -32,13 +32,12 @@ function Footer() {
   
   return (
     <div className="Footer">
-        <BottomNavigation className="FooterBar" showLabels>
-
+          <BottomNavigation className="FooterBar" showLabels sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, boxShadow: 3 }}>
           <BottomNavigationAction
             label={gitHub}
             icon={
               <img
-              src="GitHub.svg"
+              src="assets/GitHub.svg"
               alt="Github Invertocat Logo"
               style={{ width: "auto", height: 24 }}
             />
@@ -58,7 +57,7 @@ function Footer() {
             label={linkedIn}
             icon={
               <img
-                src="LinkedIn.png"
+                src="assets/LinkedIn.png"
                 alt="LinkedIn In Logo"
                 style={{ width: "auto", height: 24 }}
               />
@@ -67,6 +66,7 @@ function Footer() {
             to="https://www.linkedin.com/in/devendattani/"
           />
         </BottomNavigation>
+
     </div>
   );
 }

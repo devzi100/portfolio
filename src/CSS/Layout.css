@@ -13,8 +13,15 @@ html, body {
 .content {
   flex: 1;
   overflow-y: auto;
-}
+ }
 
+ .Header {
+  height: 40px;
+ }
+
+.Footer {
+  height: 56px;
+}
 
 @media (max-width: 240px) {
   .FooterBar {
