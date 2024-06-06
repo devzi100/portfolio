@@ -1,8 +1,10 @@
 # Pipeline which Deploys to Cloudflare Preview server
 
-# Pipeline runs on any pushes
+# Pipeline runs on any pushes except tags
 on:
   push:
+      tags:
+      - '*'
 
 jobs:
   publish:
