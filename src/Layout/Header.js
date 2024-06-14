@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import {
   IconButton,
   Tooltip,
@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 const pages = ["Home", "Experience", "Projects", "Contact"];
 
 function Header() {
-  const [navMenu, setNavMenu] = React.useState(null);
+  const [navMenu, setNavMenu] = useState(null);
   const { toggleColorMode } = useContext(themeToggle);
 
   const handleOpenNavMenu = (event) => {
@@ -47,6 +47,7 @@ function Header() {
   return (
     <Grid
       container
+      id="header"
       alignItems="center"
       overflow={"auto"}
       sx={{

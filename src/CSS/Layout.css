@@ -1,30 +1,24 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
-#outer-container {
-  display: flex;
-  flex-direction: column;
+#root {
   height: 100vh;
 }
 
-.content {
+#outer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.page-content {
   flex: 1;
   overflow-y: auto;
- }
+}
 
- .Header {
-  height: 40px;
- }
-
-.Footer {
+.footer {
   height: 56px;
 }
 
 @media (max-width: 240px) {
-  .FooterBar {
+  .footer-bar {
     overflow-x: auto;
     justify-content: flex-start !important; /*Forced by BottomNavigation otherwise.*/
   }

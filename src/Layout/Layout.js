@@ -1,14 +1,21 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Container, Paper } from "@mui/material";
+import "../CSS/Layout.css";
 
 function Layout({ children }) {
   return (
-    <div id="outer-container">
+    <Container id="outer-container" disableGutters maxWidth="xl">
       <Header />
-      <div className="content">{children}</div>
+      <Paper
+        square
+        elevation={5}
+        className="page-content"
+        children={children}
+      />
       <Footer />
-    </div>
+    </Container>
   );
 }
 

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../CSS/Layout.css";
 import { Link } from "react-router-dom";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import EmailIcon from '@mui/icons-material/Email';
+import {
+  Container,
+  BottomNavigation,
+  BottomNavigationAction,
+} from "@mui/material";
+import EmailIcon from "@mui/icons-material/Email";
 
 function Footer() {
   const [gitHub, setGitHub] = useState("Browse My Github Profile");
@@ -29,45 +31,48 @@ function Footer() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   return (
-    <div className="Footer">
-          <BottomNavigation className="FooterBar" showLabels sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, boxShadow: 3 }}>
-          <BottomNavigationAction
-            label={gitHub}
-            icon={
-              <img
+    <Container id="footer">
+      <BottomNavigation
+        className="footer-bar"
+        showLabels
+        sx={{ position: "fixed", bottom: 0, left: 0, right: 0, boxShadow: 3 }}
+      >
+        <BottomNavigationAction
+          label={gitHub}
+          icon={
+            <img
               src="assets/github.svg"
               alt="Github Invertocat Logo"
               style={{ width: "auto", height: 24 }}
             />
-            }
-            component={Link}
-            to="https://github.com/devzi100"
-          />
+          }
+          component={Link}
+          to="https://github.com/devzi100"
+        />
 
-          <BottomNavigationAction
-            label={email}
-            icon={<EmailIcon />}
-            component={Link}
-            to="mailto:contact@devendattani.com"
-          />
+        <BottomNavigationAction
+          label={email}
+          icon={<EmailIcon />}
+          component={Link}
+          to="mailto:contact@devendattani.com"
+        />
 
-          <BottomNavigationAction
-            label={linkedIn}
-            icon={
-              <img
-                src="assets/LinkedIn.png"
-                alt="LinkedIn In Logo"
-                style={{ width: "auto", height: 24 }}
-              />
-            }
-            component={Link}
-            to="https://www.linkedin.com/in/devendattani/"
-          />
-        </BottomNavigation>
-
-    </div>
+        <BottomNavigationAction
+          label={linkedIn}
+          icon={
+            <img
+              src="assets/LinkedIn.png"
+              alt="LinkedIn In Logo"
+              style={{ width: "auto", height: 24 }}
+            />
+          }
+          component={Link}
+          to="https://www.linkedin.com/in/devendattani/"
+        />
+      </BottomNavigation>
+    </Container>
   );
 }
 

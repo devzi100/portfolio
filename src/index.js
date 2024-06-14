@@ -39,7 +39,7 @@ function Routes() {
 /*
   Set Theme and Selection Tool
 */
-function ThemeSelection() {
+function useThemeSelection() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [mode, setMode] = useState(prefersDarkMode ? "dark" : "light");
 
@@ -66,7 +66,7 @@ function ThemeSelection() {
 }
 
 function App() {
-  const { theme, colorMode } = ThemeSelection();
+  const { theme, colorMode } = useThemeSelection();
 
   return (
     <themeToggle.Provider value={colorMode}>
