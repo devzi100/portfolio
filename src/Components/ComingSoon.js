@@ -5,7 +5,12 @@ function ComingSoon({ page }) {
   return (
     <Container
       className="coming-soon"
-      style={{ transform: "translateY(1000%)" }}
+      sx={{
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <Typography variant="h5" align="center" gutterBottom>
         {page} Page - Coming Soon

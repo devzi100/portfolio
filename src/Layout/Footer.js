@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import {
   Container,
   BottomNavigation,
@@ -48,15 +47,16 @@ function Footer() {
               style={{ width: "auto", height: 24 }}
             />
           }
-          component={Link}
-          to="https://github.com/devzi100"
+          component="a"
+          href="https://github.com/devzi100"
+          target="_blank"
         />
 
         <BottomNavigationAction
           label={email}
           icon={<EmailIcon />}
-          component={Link}
-          to="mailto:contact@devendattani.com"
+          component="a"
+          href="mailto:contact@devendattani.com"
         />
 
         <BottomNavigationAction
@@ -68,8 +68,9 @@ function Footer() {
               style={{ width: "auto", height: 24 }}
             />
           }
-          component={Link}
-          to="https://www.linkedin.com/in/devendattani/"
+          component="a"
+          href="https://www.linkedin.com/in/devendattani/"
+          target="_blank"
         />
       </BottomNavigation>
     </Container>
