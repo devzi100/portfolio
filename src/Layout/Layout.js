@@ -6,7 +6,7 @@ import "../CSS/Layout.css";
 
 function Layout({ children }) {
   return (
-    <Container id="outer-container" disableGutters maxWidth="xl">
+    <Container id="outer-container" disableGutters maxWidth="none">
       <Header />
       <Paper
         square
