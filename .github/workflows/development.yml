@@ -3,7 +3,9 @@
 # Pipeline runs on any pushes
 on:
   push:
-
+    branches:
+      - master 
+      
 jobs:
   publish:
     runs-on: ubuntu-latest
